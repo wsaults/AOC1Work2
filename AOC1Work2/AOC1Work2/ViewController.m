@@ -69,9 +69,9 @@
     
     // Create the published header.
     UILabel *publishedHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
-                                                                         authorHeader.frame.origin.y +
-                                                                         authorHeader.frame.size.height +
-                                                                         kLabelMargin, kLabelHeaderWidth, kLabelHeight)];
+                                                                         authorHeader.frame.origin.y + authorHeader.frame.size.height + kLabelMargin,
+                                                                         kLabelHeaderWidth,
+                                                                         kLabelHeight)];
     [publishedHeader setBackgroundColor:[UIColor clearColor]];
     [publishedHeader setText:@"Published:"];
     [publishedHeader setFont:kLabelHeaderFontSize];
@@ -89,6 +89,52 @@
     [published setTextAlignment:NSTextAlignmentLeft];
     [published setTextColor:kLabelTextColor];
     
+    // Create the summary header label.
+    UILabel *summaryHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                                   publishedHeader.frame.origin.y + publishedHeader.frame.size.height + kLabelMargin,
+                                                                   kLabelHeaderWidth,
+                                                                   kLabelHeight)];
+    [summaryHeader setBackgroundColor:[UIColor clearColor]];
+    [summaryHeader setText:@"Summary"];
+    [summaryHeader setFont:kLabelHeaderFontSize];
+    [summaryHeader setTextAlignment:NSTextAlignmentLeft];
+    [summaryHeader setTextColor:kLabelHeaderTextColor];
+    
+    // Create the summary label.
+    UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(kLabelMargin,
+                                                               summaryHeader.frame.origin.y + summaryHeader.frame.size.height,
+                                                               containerView.frame.size.width - kLabelMargin*2,
+                                                               170)];
+    [summary setBackgroundColor:[UIColor clearColor]];
+    [summary setText:@"Potty time with Elmo is all about teaching your child about using the potty. Elmo makes using the potty seem like no big deal when he takes his stuffed pall Baby David to use the potty. This book is full of visual cues that signify when to press the included buttons for action-packed sounds that's sure to get your youne one excied about the potty. \nMy son loves this book!"];
+    [summary setFont:kLabelFontSize];
+    [summary setTextAlignment:NSTextAlignmentCenter];
+    [summary setTextColor:kLabelTextColor];
+    [summary setNumberOfLines:10];
+    
+    // Create the list of items header label.
+    UILabel *listOfItemsHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                               summary.frame.origin.y + summary.frame.size.height + kLabelMargin,
+                                                               100,
+                                                               kLabelHeight)];
+    [listOfItemsHeader setBackgroundColor:[UIColor clearColor]];
+    [listOfItemsHeader setText:@"List Of items:"];
+    [listOfItemsHeader setFont:kLabelHeaderFontSize];
+    [listOfItemsHeader setTextAlignment:NSTextAlignmentLeft];
+    [listOfItemsHeader setTextColor:kLabelHeaderTextColor];
+    
+    // Create the list of items label.
+    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(kLabelMargin,
+                                                                 listOfItemsHeader.frame.origin.y + listOfItemsHeader.frame.size.height,
+                                                                 containerView.frame.size.width - kLabelMargin*2,
+                                                                 170)];
+//    [listOfItems setBackgroundColor:[UIColor clearColor]];
+    [listOfItems setText:@""];
+    [listOfItems setFont:kLabelFontSize];
+    [listOfItems setTextAlignment:NSTextAlignmentCenter];
+    [listOfItems setTextColor:kLabelTextColor];
+    [listOfItems setNumberOfLines:3];
+    
     // Add the subviews
     [self.view addSubview:containerView];
     [containerView addSubview:bookTitle];
@@ -97,6 +143,10 @@
     [containerView addSubview:author];
     [containerView addSubview:publishedHeader];
     [containerView addSubview:published];
+    [containerView addSubview:summaryHeader];
+    [containerView addSubview:summary];
+    [containerView addSubview:listOfItemsHeader];
+    [containerView addSubview:listOfItems];
 }
 
 - (void)didReceiveMemoryWarning
