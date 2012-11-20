@@ -11,8 +11,10 @@
 #define kLabelHeaderWidth 75
 #define kLabelTitleHeight 30
 #define kLabelHeight 20
+#define kLabelHeaderFontSize [UIFont boldSystemFontOfSize:14]
 #define kLabelFontSize [UIFont systemFontOfSize:14]
 #define kLabelHeaderTextColor [UIColor colorWithRed:0.361 green:0.475 blue:0.169 alpha:1] /*#5c792b*/
+#define kLabelTextColor [UIColor colorWithRed:1 green:0.31 blue:0.141 alpha:1] /*#ff4f24*/
 
 @interface ViewController ()
 
@@ -50,7 +52,7 @@
     UILabel *authorHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, kLabelHeaderWidth, kLabelHeight)];
     [authorHeader setBackgroundColor:[UIColor clearColor]];
     [authorHeader setText:@"Author:"];
-    [authorHeader setFont:kLabelFontSize];
+    [authorHeader setFont:kLabelHeaderFontSize];
     [authorHeader setTextAlignment:NSTextAlignmentRight];
     [authorHeader setTextColor:kLabelHeaderTextColor];
     
@@ -63,7 +65,7 @@
     [author setText:@"Kelli Kaufmann"];
     [author setFont:kLabelFontSize];
     [author setTextAlignment:NSTextAlignmentLeft];
-    [author setTextColor:[UIColor colorWithRed:1 green:0.31 blue:0.141 alpha:1]]; /*#ff4f24*/
+    [author setTextColor:kLabelTextColor];
     
     // Create the published header.
     UILabel *publishedHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
@@ -72,9 +74,20 @@
                                                                          kLabelMargin, kLabelHeaderWidth, kLabelHeight)];
     [publishedHeader setBackgroundColor:[UIColor clearColor]];
     [publishedHeader setText:@"Published:"];
-    [publishedHeader setFont:kLabelFontSize];
+    [publishedHeader setFont:kLabelHeaderFontSize];
     [publishedHeader setTextAlignment:NSTextAlignmentRight];
     [publishedHeader setTextColor:kLabelHeaderTextColor];
+    
+    // Create the published label.
+    UILabel *published = [[UILabel alloc] initWithFrame:CGRectMake(publishedHeader.frame.size.width + kLabelMargin,
+                                                                 publishedHeader.frame.origin.y,
+                                                                 containerView.frame.size.width - kLabelHeaderWidth - kLabelMargin,
+                                                                   kLabelHeight)];
+    [published setBackgroundColor:[UIColor clearColor]];
+    [published setText:@"2008"];
+    [published setFont:kLabelFontSize];
+    [published setTextAlignment:NSTextAlignmentLeft];
+    [published setTextColor:kLabelTextColor];
     
     // Add the subviews
     [self.view addSubview:containerView];
@@ -83,6 +96,7 @@
     [containerView addSubview:authorHeader];
     [containerView addSubview:author];
     [containerView addSubview:publishedHeader];
+    [containerView addSubview:published];
 }
 
 - (void)didReceiveMemoryWarning
