@@ -39,10 +39,12 @@
         }
     }
     
+#pragma mark - Container
     // Create the container view.
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [containerView setBackgroundColor:[UIColor colorWithRed:0.925 green:0.91 blue:0.89 alpha:1]]; /*#ece8e3*/
     
+#pragma mark - Title
     // Create the book title label.
     UILabel *bookTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, containerView.frame.size.width, kLabelTitleHeight)];
     [bookTitle setBackgroundColor:[UIColor clearColor]];
@@ -61,6 +63,7 @@
     [bookSubtitle setFont:[UIFont systemFontOfSize:12]];
     [bookSubtitle setTextAlignment:NSTextAlignmentCenter];
     
+#pragma mark - Author    
     // Create the author header label.
     UILabel *authorHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, kLabelHeaderWidth, kLabelHeight)];
     [authorHeader setBackgroundColor:[UIColor clearColor]];
@@ -80,6 +83,7 @@
     [author setTextAlignment:NSTextAlignmentLeft];
     [author setTextColor:kLabelTextColor];
     
+#pragma mark - Published
     // Create the published header.
     UILabel *publishedHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                          authorHeader.frame.origin.y + authorHeader.frame.size.height + kLabelMargin,
@@ -102,6 +106,7 @@
     [published setTextAlignment:NSTextAlignmentLeft];
     [published setTextColor:kLabelTextColor];
     
+#pragma mark - Summary
     // Create the summary header label.
     UILabel *summaryHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                    publishedHeader.frame.origin.y + publishedHeader.frame.size.height + kLabelMargin,
@@ -124,7 +129,8 @@
     [summary setTextAlignment:NSTextAlignmentCenter];
     [summary setTextColor:kLabelTextColor];
     [summary setNumberOfLines:10];
-    
+
+#pragma mark - List of items
     // Create the list of items header label.
     UILabel *listOfItemsHeader = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                summary.frame.origin.y + summary.frame.size.height + kLabelMargin,
@@ -148,6 +154,7 @@
     [listOfItems setTextColor:kLabelTextColor];
     [listOfItems setNumberOfLines:3];
     
+#pragma mark - Add subvies
     // Add the subviews
     [self.view addSubview:containerView];
     [containerView addSubview:bookTitle];
