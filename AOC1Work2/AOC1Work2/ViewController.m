@@ -26,6 +26,19 @@
 {
     [super viewDidLoad];
     
+    // Create the array.
+    NSArray *listOfItemsArray = [[NSArray alloc] initWithObjects:@"Elmo", @"Potty", @"Baby David", @"Sounds", @"Buttons!", nil];
+    NSMutableString *listOfItemsString = [NSMutableString new];
+    
+    // Loop through the array and when you hit the last item do not add the comma.
+    for (NSArray *item in listOfItemsArray) {
+        if (![[listOfItemsArray lastObject]  isEqual:item]) {
+            [listOfItemsString appendString:[NSString stringWithFormat:@"%@, ",item]];
+        } else {
+            [listOfItemsString appendString:[NSString stringWithFormat:@"%@",item]];
+        }
+    }
+    
     // Create the container view.
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [containerView setBackgroundColor:[UIColor colorWithRed:0.925 green:0.91 blue:0.89 alpha:1]]; /*#ece8e3*/
@@ -127,9 +140,9 @@
     UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(kLabelMargin,
                                                                  listOfItemsHeader.frame.origin.y + listOfItemsHeader.frame.size.height,
                                                                  containerView.frame.size.width - kLabelMargin*2,
-                                                                 170)];
-//    [listOfItems setBackgroundColor:[UIColor clearColor]];
-    [listOfItems setText:@""];
+                                                                 60)];
+    [listOfItems setBackgroundColor:[UIColor clearColor]];
+    [listOfItems setText:listOfItemsString];
     [listOfItems setFont:kLabelFontSize];
     [listOfItems setTextAlignment:NSTextAlignmentCenter];
     [listOfItems setTextColor:kLabelTextColor];
