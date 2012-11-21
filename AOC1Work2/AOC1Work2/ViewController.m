@@ -51,7 +51,7 @@
                                                                       bookTitle.frame.origin.y +
                                                                       bookTitle.frame.size.height,
                                                                       containerView.frame.size.width, kLabelHeight)];
-    [bookSubtitle setBackgroundColor:[UIColor clearColor]];
+    [bookSubtitle setBackgroundColor:[UIColor yellowColor]];
     [bookSubtitle setText:@"Play-a-Sound Book - Sesame Street"];
     [bookSubtitle setFont:[UIFont systemFontOfSize:12]];
     [bookSubtitle setTextAlignment:NSTextAlignmentCenter];
@@ -59,7 +59,7 @@
 #pragma mark - Author    
     // Create the author header label.
     UILabel *authorHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, kLabelHeaderWidth, kLabelHeight)];
-    [authorHeader setBackgroundColor:[UIColor clearColor]];
+    [authorHeader setBackgroundColor:[UIColor whiteColor]];
     [authorHeader setText:@"Author:"];
     [authorHeader setFont:kLabelHeaderFontSize];
     [authorHeader setTextAlignment:NSTextAlignmentRight];
@@ -70,7 +70,7 @@
                                                                 authorHeader.frame.origin.y,
                                                                 containerView.frame.size.width - kLabelHeaderWidth - kLabelMargin,
                                                                 kLabelHeight)];
-    [author setBackgroundColor:[UIColor clearColor]];
+    [author setBackgroundColor:[UIColor blackColor]];
     [author setText:@"Kelli Kaufmann"];
     [author setFont:kLabelFontSize];
     [author setTextAlignment:NSTextAlignmentLeft];
@@ -82,22 +82,22 @@
                                                                          authorHeader.frame.origin.y + authorHeader.frame.size.height + kLabelMargin,
                                                                          kLabelHeaderWidth,
                                                                          kLabelHeight)];
-    [publishedHeader setBackgroundColor:[UIColor clearColor]];
+    [publishedHeader setBackgroundColor:[UIColor blueColor]];
     [publishedHeader setText:@"Published:"];
     [publishedHeader setFont:kLabelHeaderFontSize];
     [publishedHeader setTextAlignment:NSTextAlignmentRight];
-    [publishedHeader setTextColor:kLabelHeaderTextColor];
+    [publishedHeader setTextColor:[UIColor greenColor]];
     
     // Create the published label.
     UILabel *published = [[UILabel alloc] initWithFrame:CGRectMake(publishedHeader.frame.size.width + kLabelMargin,
                                                                  publishedHeader.frame.origin.y,
                                                                  containerView.frame.size.width - kLabelHeaderWidth - kLabelMargin,
                                                                    kLabelHeight)];
-    [published setBackgroundColor:[UIColor clearColor]];
+    [published setBackgroundColor:[UIColor orangeColor]];
     [published setText:@"2008"];
     [published setFont:kLabelFontSize];
     [published setTextAlignment:NSTextAlignmentLeft];
-    [published setTextColor:kLabelTextColor];
+    [published setTextColor:[UIColor grayColor]];
     
 #pragma mark - Summary
     // Create the summary header label.
@@ -105,22 +105,22 @@
                                                                    publishedHeader.frame.origin.y + publishedHeader.frame.size.height + kLabelMargin,
                                                                    kLabelHeaderWidth,
                                                                    kLabelHeight)];
-    [summaryHeader setBackgroundColor:[UIColor clearColor]];
+    [summaryHeader setBackgroundColor:[UIColor purpleColor]];
     [summaryHeader setText:@"Summary"];
     [summaryHeader setFont:kLabelHeaderFontSize];
     [summaryHeader setTextAlignment:NSTextAlignmentLeft];
-    [summaryHeader setTextColor:kLabelHeaderTextColor];
+    [summaryHeader setTextColor:[UIColor magentaColor]];
     
     // Create the summary label.
     UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(kLabelMargin,
                                                                summaryHeader.frame.origin.y + summaryHeader.frame.size.height,
                                                                containerView.frame.size.width - kLabelMargin*2,
                                                                170)];
-    [summary setBackgroundColor:[UIColor clearColor]];
+    [summary setBackgroundColor:[UIColor lightGrayColor]];
     [summary setText:@"Potty time with Elmo is all about teaching your child about using the potty. Elmo makes using the potty seem like no big deal when he takes his stuffed pall Baby David to use the potty. This book is full of visual cues that signify when to press the included buttons for action-packed sounds that's sure to get your youne one excied about the potty. \nMy son loves this book!"];
     [summary setFont:kLabelFontSize];
     [summary setTextAlignment:NSTextAlignmentCenter];
-    [summary setTextColor:kLabelTextColor];
+    [summary setTextColor:[UIColor redColor]];
     [summary setNumberOfLines:10];
 
 #pragma mark - List of items
@@ -129,22 +129,22 @@
                                                                summary.frame.origin.y + summary.frame.size.height + kLabelMargin,
                                                                100,
                                                                kLabelHeight)];
-    [listOfItemsHeader setBackgroundColor:[UIColor clearColor]];
+    [listOfItemsHeader setBackgroundColor:[UIColor darkGrayColor]];
     [listOfItemsHeader setText:@"List Of items:"];
     [listOfItemsHeader setFont:kLabelHeaderFontSize];
     [listOfItemsHeader setTextAlignment:NSTextAlignmentLeft];
-    [listOfItemsHeader setTextColor:kLabelHeaderTextColor];
+    [listOfItemsHeader setTextColor:[UIColor brownColor]];
     
     // Create the list of items label.
     UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(kLabelMargin,
                                                                  listOfItemsHeader.frame.origin.y + listOfItemsHeader.frame.size.height,
                                                                  containerView.frame.size.width - kLabelMargin*2,
                                                                  60)];
-    [listOfItems setBackgroundColor:[UIColor clearColor]];
+    [listOfItems setBackgroundColor:[UIColor cyanColor]];
     [listOfItems setText:listOfItemsString];
     [listOfItems setFont:kLabelFontSize];
     [listOfItems setTextAlignment:NSTextAlignmentCenter];
-    [listOfItems setTextColor:kLabelTextColor];
+    [listOfItems setTextColor:[UIColor colorWithRed:0.800 green:0.90 blue:0.70 alpha:1]];
     [listOfItems setNumberOfLines:3];
     
 #pragma mark - Add subvies
